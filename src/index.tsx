@@ -4,15 +4,18 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 
 import './index.scss';
+import {AnnouncementProvider} from "./AnnoncementContext";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <BrowserRouter>
-      <React.StrictMode>
+      <AnnouncementProvider>
+        <React.StrictMode>
           <Routes>
-              <Route path="/" element={<App />} />
+            <Route path="/" element={<App />} />
           </Routes>
-      </React.StrictMode>
+        </React.StrictMode>
+      </AnnouncementProvider>
   </BrowserRouter>
 );

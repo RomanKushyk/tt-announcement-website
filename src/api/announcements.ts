@@ -2,7 +2,7 @@ import {patch, post, remove, request, wait} from './api';
 import {Announcement} from '../types/Announcement';
 
 export const getAnnouncementsList = () => {
-    return request('posts');
+    return request('/posts');
 };
 
 export const getAnnouncementDetails = async (id: number) => {
