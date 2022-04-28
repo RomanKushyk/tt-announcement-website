@@ -6,9 +6,12 @@ import {Loader} from "./components/Loader";
 import {LoadingError} from "./components/LoadingError";
 import {AnnouncementsSearchForm} from "./components/AnnouncementsSearchForm";
 import {AnnouncementsList} from "./components/AnnouncemetsList";
-import { Outlet } from "react-router-dom";
+import {NavLink, Outlet, useNavigate} from "react-router-dom";
+import {AnnouncementAddForm} from "./components/AnnouncementAddForm";
+import {Modal} from "./components/Modal";
 
 const App = () => {
+  const navigate = useNavigate();
   return (
     <div className="App">
       <header className="App__header">
@@ -25,7 +28,15 @@ const App = () => {
             <Loader/>
             <AnnouncementsList/>
             <LoadingError errorObject={'announcements'}/>
-            list
+
+            <button
+              type="button"
+              className=""
+              onClick={() => {
+                navigate('/add-announcement')
+              }}
+            >Add new</button>
+            <Outlet />
           </div>
         </div>
       </main>

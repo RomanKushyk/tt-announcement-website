@@ -13,20 +13,21 @@ export const AnnouncementsSearchForm: FC = () => {
   };
 
   return (
-    <div className="Announcements__form-container">
-      <form className="Announcements__form form">
+    <div className="Announcements__search-form-container">
+      <form className="Announcements__search-form search-form">
         <input
           type="text"
           id="announcement-title-input"
           name="announcement-title-input"
-          className="form__title-input"
+          className="search-form__title-input"
+          placeholder="Введіть назву"
           value={announcementsTitleQuery}
           onChange={handleChange}
         />
 
         <button
           type="button"
-          className="form__button form__button--add-new"
+          className="search-form__button search-form__button--add-new"
           onClick={() => {}}
         >
          Add new

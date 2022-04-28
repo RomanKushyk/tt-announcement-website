@@ -1,0 +1,38 @@
+@import "src/styles/_mixins";
+
+.Modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+  }
+
+  &__footer {
+    display: flex;
+    padding: 10px;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__body {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+
+  &__close {
+    width: 100%;
+    @include button;
+  }
+}

@@ -1,0 +1,19 @@
+@import "src/styles/_mixins";
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title-input {
+
+  }
+
+  &__body-input {
+
+  }
+
+  &__submit {
+    @include button;
+  }
+}

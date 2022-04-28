@@ -1,17 +1,17 @@
 .Announcements {
-  &__form-container {
+  &__search-form-container {
     display: flex;
     background-color: coral;
     padding: 20px 10px;
     border-radius: 0.4rem;
   }
 
-  &__form {
+  &__search-form {
     margin: 0;
   }
 }
 
-.form {
+.search-form {
   &__title-input {
     width: 200px;
     border: none;

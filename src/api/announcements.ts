@@ -11,7 +11,7 @@ export const getAnnouncementDetails = async (id: number) => {
     return request(`/posts/${id}`);
 };
 
-export const addAnnouncement = (data: Omit<Announcement, 'createdAt'>) => {
+export const addAnnouncement = (data: Omit<Announcement, 'createdAt' | 'id' | 'userId'>) => {
     return post('/posts', data);
 };
 
