@@ -1,13 +1,15 @@
 @import "utils";
 
 @import "blocks/container";
+@import "blocks/button";
 
 @import "../App";
 @import "blocks/announcements";
 @import "../components/AnnouncementAddForm/AnnouncementAddForm";
 @import "../components/AnnouncementsSearchForm/AnnouncementsSearcForm";
 @import "../components/AnnouncementListItem/AnnouncementsListItem";
-//@import "../components/AnnouncemetsList";
+@import "../components/AnnouncemetsList/AnnouncementList";
 @import "../components/Loader/Loader";
 @import "../components/LoadingError/LoadingError";
 @import "../components/Modal/Modal";
+@import "../components/AnnouncementCard/AnnouncementCard";

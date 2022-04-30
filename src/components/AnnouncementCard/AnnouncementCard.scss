@@ -1,0 +1,53 @@
+.AnnouncementCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: rgba(210, 200, 190, 0.3);
+  border-radius: 0.4rem;
+  padding: 15px 10px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: inherit;
+    font-size: 22px;
+    line-height: 28px;
+  }
+
+  &__edit-button {
+    background-color: rgba(255, 180, 120, 0.6);
+    border-radius: 0.2rem;
+    @extend button
+  }
+
+  &__description {
+    padding: 10px 0;
+    font-size: 18px;
+    font-style: italic;
+    background-color: rgba(230, 200, 180, 0.3);
+    border-radius: 0.2rem;
+  }
+
+  &__date {
+    text-align: end;
+    color: #666;
+  }
+
+  &__show-button {
+    align-self: end;
+    background-color: rgba(255, 127, 80, 0.6);
+    @extend %button;
+  }
+
+  &__similar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: inherit;
+    font-size: 14px;
+    //background-color: rgba(230, 212, 185, 0.6);
+  }
+}

@@ -1,3 +1,5 @@
+@import "src/styles/utils";
+
 .Announcements {
   &__search-form-container {
     display: flex;
@@ -9,12 +11,11 @@
 }
 
 .search-form {
+
   &__title-input {
-    width: 200px;
-    border: none;
-    outline: none;
-    background-color: #dddddd;
-    border-radius: 0.2rem;
-    padding: 5px 10px;
+    width: 250px;
+    padding: 6px 10px;
+
+    @extend %input;
   }
 }

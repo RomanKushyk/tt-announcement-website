@@ -9,9 +9,7 @@ interface AnnouncementContextInterface {
     announcementsIsLoading: boolean,
     setAnnouncementsIsLoading: Dispatch<SetStateAction<boolean>>,
     selectedAnnouncementId: number,
-    setSelectedAnnouncementId: Dispatch<SetStateAction<number>>
-    announcementsTitleQuery: string,
-    setAnnouncementTitleQuery: Dispatch<SetStateAction<string>>,
+    setSelectedAnnouncementId: Dispatch<SetStateAction<number>>,
 }
 
 export const AnnouncementsContext = createContext<AnnouncementContextInterface>({
@@ -22,15 +20,12 @@ export const AnnouncementsContext = createContext<AnnouncementContextInterface>(
     setAnnouncementsIsLoading: () => {},
     selectedAnnouncementId: 0,
     setSelectedAnnouncementId: () => {},
-    announcementsTitleQuery: '',
-    setAnnouncementTitleQuery: () => {},
 });
 
 export const AnnouncementProvider: FC = ({ children }) => {
     const [announcements, setAnnouncements] = useState<Announcement[]>([]);
     const [announcementsIsLoading, setAnnouncementsIsLoading] = useState<boolean>(false);
     const [selectedAnnouncementId, setSelectedAnnouncementId] = useState<number>(0);
-    const [announcementsTitleQuery, setAnnouncementTitleQuery] = useState<string>('');
 
     const loadAnnouncements = async () => {
         setAnnouncementsIsLoading(true);
@@ -53,8 +48,6 @@ export const AnnouncementProvider: FC = ({ children }) => {
         setAnnouncementsIsLoading,
         selectedAnnouncementId,
         setSelectedAnnouncementId,
-        announcementsTitleQuery,
-        setAnnouncementTitleQuery,
     };
 
     return (

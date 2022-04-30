@@ -1,4 +1,12 @@
 %button {
-  border-radius: 0.4rem;
-  color: #000000;
+  padding: 6px 10px;
+  border-radius: 0.2rem;
+}
+
+%input {
+  border: none;
+  outline: none;
+  background-color: #dddddd;
+  border-radius: 0.2rem;
+  padding: 5px 10px;
 }

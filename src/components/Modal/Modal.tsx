@@ -1,10 +1,15 @@
 import React, {FC} from "react";
-import {AnnouncementAddForm} from "../AnnouncementAddForm";
 
 import './Modal.scss';
 import {useNavigate} from "react-router-dom";
 
-export const Modal: FC = () => {
+interface Props {
+  component: JSX.Element,
+}
+
+export const Modal: FC<Props> = ({
+  component
+}) => {
   const navigate = useNavigate();
   return (
     <div
@@ -18,7 +23,7 @@ export const Modal: FC = () => {
         onClick={event => event.stopPropagation()}
       >
         <div className="Modal__body">
-          <AnnouncementAddForm/>
+          {component}
         </div>
       </div>
     </div>

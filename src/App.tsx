@@ -1,45 +1,23 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-import {Loader} from "./components/Loader";
-import {LoadingError} from "./components/LoadingError";
-import {AnnouncementsSearchForm} from "./components/AnnouncementsSearchForm";
-import {AnnouncementsList} from "./components/AnnouncemetsList";
-import {NavLink, Outlet, useNavigate} from "react-router-dom";
-import {AnnouncementAddForm} from "./components/AnnouncementAddForm";
-import {Modal} from "./components/Modal";
+import { Outlet } from "react-router-dom";
 
-const App = () => {
-  const navigate = useNavigate();
+const App: FC = () => {
   return (
     <div className="App">
-      <header className="App__header">
-        <h1 className="App__title">
-          Announcements
-        </h1>
-      </header>
-      <Outlet />
+      <div className="container">
+        <header className="App__header">
+          <h1 className="App__title">
+            Announcements
+          </h1>
+        </header>
 
-      <main className="App__content content">
-        <section className="App__section announcements">
-          <div className="container">
-            <div className="announcements__header">
-              <AnnouncementsSearchForm/>
-              <button
-                type="button"
-                className="announcement__button announcement__button--add-new"
-                onClick={() => {
-                  navigate('/add-announcement')
-                }}
-              >Add new</button>
-            </div>
-
-            <Loader/>
-            <AnnouncementsList/>
-            <LoadingError errorObject={'announcements'}/>
+        <main>
+          <section className="App__section announcements">
             <Outlet />
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
+      </div>
     </div>
   );
 }

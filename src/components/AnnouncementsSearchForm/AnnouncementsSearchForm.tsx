@@ -1,15 +1,21 @@
-import React, {FC, useContext} from "react";
+import React, {ChangeEvent, FC, useContext} from "react";
 import {AnnouncementsContext} from "../../AnnoncementsContext";
 
 import './AnnouncementsSearcForm.scss';
+import {useSearchParams} from "react-router-dom";
 
 export const AnnouncementsSearchForm: FC = () => {
-  const {announcementsTitleQuery, setAnnouncementTitleQuery} = useContext(AnnouncementsContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+  let filter = searchParams.get('filter') || '';
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const {value} = event.target;
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.target;
 
-    setAnnouncementTitleQuery(value);
+    setSearchParams(
+      value
+        ? { filter: value }
+        : {}
+    )
   };
 
   return (
@@ -21,7 +27,7 @@ export const AnnouncementsSearchForm: FC = () => {
           name="announcement-title-input"
           className="search-form__title-input"
           placeholder="Введіть назву"
-          value={announcementsTitleQuery}
+          value={filter}
           onChange={handleChange}
         />
       </form>

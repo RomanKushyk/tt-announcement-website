@@ -1,0 +1,7 @@
+.button {
+  @extend %button;
+
+  &--delete {
+    background-color: red;
+  }
+}
