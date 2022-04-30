@@ -4,10 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 
 import './index.scss';
-import './styles/_variables.scss'
-import './styles/general.scss'
+import './styles/main.scss';
 
-import {AnnouncementProvider} from "./AnnoncementContext";
+import {AnnouncementProvider} from "./AnnoncementsContext";
 import {Modal} from "./components/Modal";
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

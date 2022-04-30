@@ -1,4 +1,4 @@
-@import "src/styles/_mixins";
+@import "../../styles/utils/mixins";
 
 .Modal {
   position: fixed;
@@ -12,27 +12,12 @@
   justify-content: center;
 
   &__content {
-    width: 400px;
+    width: 350px;
     background-color: #fff;
     border-radius: 0.5rem;
   }
 
-  &__footer {
-    display: flex;
-    padding: 10px;
-  }
-
-  &__title {
-    margin: 0;
-  }
-
   &__body {
     padding: 10px;
-    border-bottom: 1px solid #eee;
-  }
-
-  &__close {
-    width: 100%;
-    @include button;
   }
 }

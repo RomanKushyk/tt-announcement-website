@@ -1,17 +1,10 @@
 .App {
+
+  &__header {
+    margin: 20px 0;
+  }
+
   &__title {
-    margin: 15px 0;
     text-align: center;
   }
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin: 20px 10px 0;
-}
-
-button {
-  border: none;
 }

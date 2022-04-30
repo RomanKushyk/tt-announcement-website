@@ -1,7 +1,7 @@
 import {Announcement} from "../../types/Announcement";
 import {FC, memo, useContext} from "react";
 import {removeAnnouncement} from "../../api/announcements";
-import {AnnouncementsContext} from "../../AnnoncementContext";
+import {AnnouncementsContext} from "../../AnnoncementsContext";
 
 interface Props {
   item: Announcement,

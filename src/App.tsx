@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './App.scss';
-
 import {Loader} from "./components/Loader";
 import {LoadingError} from "./components/LoadingError";
 import {AnnouncementsSearchForm} from "./components/AnnouncementsSearchForm";
@@ -21,24 +19,26 @@ const App = () => {
       </header>
       <Outlet />
 
-      <main>
-        <div className="App__content">
+      <main className="App__content content">
+        <section className="App__section announcements">
           <div className="container">
-            <AnnouncementsSearchForm/>
+            <div className="announcements__header">
+              <AnnouncementsSearchForm/>
+              <button
+                type="button"
+                className="announcement__button announcement__button--add-new"
+                onClick={() => {
+                  navigate('/add-announcement')
+                }}
+              >Add new</button>
+            </div>
+
             <Loader/>
             <AnnouncementsList/>
             <LoadingError errorObject={'announcements'}/>
-
-            <button
-              type="button"
-              className=""
-              onClick={() => {
-                navigate('/add-announcement')
-              }}
-            >Add new</button>
             <Outlet />
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );

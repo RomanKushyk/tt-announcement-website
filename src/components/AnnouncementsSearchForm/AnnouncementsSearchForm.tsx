@@ -1,5 +1,5 @@
 import React, {FC, useContext} from "react";
-import {AnnouncementsContext} from "../../AnnoncementContext";
+import {AnnouncementsContext} from "../../AnnoncementsContext";
 
 import './AnnouncementsSearcForm.scss';
 
@@ -24,14 +24,6 @@ export const AnnouncementsSearchForm: FC = () => {
           value={announcementsTitleQuery}
           onChange={handleChange}
         />
-
-        <button
-          type="button"
-          className="search-form__button search-form__button--add-new"
-          onClick={() => {}}
-        >
-         Add new
-        </button>
       </form>
     </div>
   );

@@ -1,5 +1,5 @@
 import {FC, useContext} from "react";
-import {AnnouncementsContext} from "../../AnnoncementContext";
+import {AnnouncementsContext} from "../../AnnoncementsContext";
 import {AnnouncementListItem} from "../AnnouncementListItem";
 
 export const AnnouncementsList: FC = () => {

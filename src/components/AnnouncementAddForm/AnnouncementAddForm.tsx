@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import { addAnnouncement } from "../../api/announcements";
-import { AnnouncementsContext } from "../../AnnoncementContext";
+import { AnnouncementsContext } from "../../AnnoncementsContext";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
