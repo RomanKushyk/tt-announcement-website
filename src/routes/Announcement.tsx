@@ -7,7 +7,7 @@ import {AnnouncementsList} from "../components/AnnouncemetsList";
 import {LoadingError} from "../components/LoadingError";
 
 export const Announcement = () => {
-  const {announcementsIsLoading, announcements} = useContext(AnnouncementsContext);
+  const {announcementsIsLoading, announcements, setSelectedAnnouncementId} = useContext(AnnouncementsContext);
   const navigate = useNavigate();
 
   const showList = () => {
@@ -29,7 +29,8 @@ export const Announcement = () => {
             type="button"
             className="announcements__button"
             onClick={() => {
-              navigate('/add-announcement')
+              setSelectedAnnouncementId(0);
+              navigate('/add-announcement');
             }}
           >
             Add new

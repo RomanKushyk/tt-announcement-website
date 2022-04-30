@@ -15,7 +15,7 @@ export const Modal: FC<Props> = ({
     <div
       className="Modal"
       onClick={() => {
-        navigate('/')
+        navigate('../')
       }}
     >
       <div

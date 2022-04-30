@@ -10,6 +10,9 @@ interface AnnouncementContextInterface {
     setAnnouncementsIsLoading: Dispatch<SetStateAction<boolean>>,
     selectedAnnouncementId: number,
     setSelectedAnnouncementId: Dispatch<SetStateAction<number>>,
+    currentAnnouncement: Announcement | null,
+    setCurrentAnnouncement: Dispatch<SetStateAction<Announcement | null>>
+
 }
 
 export const AnnouncementsContext = createContext<AnnouncementContextInterface>({
@@ -20,12 +23,15 @@ export const AnnouncementsContext = createContext<AnnouncementContextInterface>(
     setAnnouncementsIsLoading: () => {},
     selectedAnnouncementId: 0,
     setSelectedAnnouncementId: () => {},
+    currentAnnouncement: null,
+    setCurrentAnnouncement: () => {},
 });
 
 export const AnnouncementProvider: FC = ({ children }) => {
     const [announcements, setAnnouncements] = useState<Announcement[]>([]);
     const [announcementsIsLoading, setAnnouncementsIsLoading] = useState<boolean>(false);
     const [selectedAnnouncementId, setSelectedAnnouncementId] = useState<number>(0);
+    const [currentAnnouncement, setCurrentAnnouncement] = useState<Announcement | null>(null);
 
     const loadAnnouncements = async () => {
         setAnnouncementsIsLoading(true);
@@ -38,7 +44,7 @@ export const AnnouncementProvider: FC = ({ children }) => {
 
     useEffect(() => {
         loadAnnouncements();
-    }, [])
+    }, []);
 
     const contextValue = {
         announcements,
@@ -48,6 +54,8 @@ export const AnnouncementProvider: FC = ({ children }) => {
         setAnnouncementsIsLoading,
         selectedAnnouncementId,
         setSelectedAnnouncementId,
+        currentAnnouncement,
+        setCurrentAnnouncement,
     };
 
     return (

@@ -1,18 +1,29 @@
-import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
-import { addAnnouncement } from "../../api/announcements";
+import React, {ChangeEvent, FormEvent, useCallback, useContext, useEffect, useState} from "react";
+import {addAnnouncement, editAnnouncement} from "../../api/announcements";
 import { AnnouncementsContext } from "../../AnnoncementsContext";
 import { useNavigate } from "react-router-dom";
 import cn from "classnames";
 
-import "./AnnouncementAddForm.scss";
+import "./AnnouncementForm.scss";
 
-export const AnnouncementAddForm = () => {
-  const {loadAnnouncements} = useContext(AnnouncementsContext);
+export const AnnouncementForm = () => {
+  const {
+    loadAnnouncements, selectedAnnouncementId, currentAnnouncement,
+  } = useContext(AnnouncementsContext);
   const [announcementTitle, setAnnouncementTitle] = useState<string>('');
   const [announcementDescription, setAnnouncementDescription] = useState<string>('');
   const [hasTitleError, setHasTitleError] = useState<boolean>(false);
   const [hasDescriptionError, setHasDescriptionError] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  const loadCurrentAnnouncement = useCallback( (id: number) => {
+    setAnnouncementTitle(currentAnnouncement?.title || '')
+    setAnnouncementDescription(currentAnnouncement?.body || '')
+  },[currentAnnouncement]);
+
+  useEffect(() => {
+    loadCurrentAnnouncement(selectedAnnouncementId);
+  }, [loadCurrentAnnouncement, selectedAnnouncementId]);
 
   const handleChange = (event: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
     const {name, value} = event.target;
@@ -42,13 +53,24 @@ export const AnnouncementAddForm = () => {
     event.preventDefault();
 
     if (announcementTitle && announcementDescription) {
-      await addAnnouncement({
-        title: announcementTitle,
-        body: announcementDescription,
-      });
+      if (selectedAnnouncementId === 0) {
+        await addAnnouncement({
+          title: announcementTitle,
+          body: announcementDescription,
+        });
+
+        navigate('/')
+      } else {
+        await editAnnouncement(selectedAnnouncementId, {
+          title: announcementTitle,
+          body: announcementDescription,
+        })
+
+        navigate('../');
+        window.location.reload();
+      }
 
       resetForm();
-      navigate('/')
       loadAnnouncements();
     }
 

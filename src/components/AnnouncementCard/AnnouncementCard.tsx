@@ -1,4 +1,4 @@
-import {useNavigate, useParams} from "react-router-dom";
+import {useNavigate, useParams, Outlet} from "react-router-dom";
 import { getAnnouncementDetails } from "../../api/announcements";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { Announcement } from "../../types/Announcement";
@@ -7,10 +7,9 @@ import { AnnouncementsContext } from "../../AnnoncementsContext";
 import {findSimilarAnnouncementsIds, normalizedDate} from "../../helpers";
 
 export const AnnouncementCard = () => {
-  const [currentAnnouncement, setCurrentAnnouncement] = useState<Announcement | null>(null);
   const [currentIsLoading, setCurrentIsLoading] = useState<boolean>(false);
   const [showSimilar, setShowSimilar] = useState<boolean>(false);
-  const {announcements} = useContext(AnnouncementsContext);
+  const {announcements, setSelectedAnnouncementId, currentAnnouncement, setCurrentAnnouncement} = useContext(AnnouncementsContext);
   const {announcementId} = useParams();
   const navigate = useNavigate();
 
@@ -58,7 +57,8 @@ export const AnnouncementCard = () => {
               type="button"
               className="AnnouncementCard__edit-button"
               onClick={() => {
-                navigate('/edit-form')
+                setSelectedAnnouncementId(currentAnnouncement?.id)
+                navigate(`./edit`)
               }}
             >
               Редагувати
@@ -103,6 +103,7 @@ export const AnnouncementCard = () => {
           )}
         </div>
       )}
+      <Outlet/>
     </>
   );
 };

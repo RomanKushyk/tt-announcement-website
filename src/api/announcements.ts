@@ -15,8 +15,8 @@ export const addAnnouncement = (data: Omit<Announcement, 'createdAt' | 'id' | 'u
     return post('/posts', data);
 };
 
-export const editAnnouncement = (data: Omit<Announcement, 'createdAt'>) => {
-    return patch('/posts', data);
+export const editAnnouncement = (id: number, data: Pick<Announcement, 'title' | 'body'>) => {
+    return patch(`/posts/${id}`, data);
 };
 
 export const removeAnnouncement = (id: number) => {
