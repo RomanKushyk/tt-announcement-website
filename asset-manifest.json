@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/tt-announcement-website/static/css/main.2f0d538a.css",
+    "main.css": "/tt-announcement-website/static/css/main.c4fe5a07.css",
     "main.js": "/tt-announcement-website/static/js/main.20c2a5a1.js",
     "index.html": "/tt-announcement-website/index.html",
-    "main.2f0d538a.css.map": "/tt-announcement-website/static/css/main.2f0d538a.css.map",
+    "main.c4fe5a07.css.map": "/tt-announcement-website/static/css/main.c4fe5a07.css.map",
     "main.20c2a5a1.js.map": "/tt-announcement-website/static/js/main.20c2a5a1.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f0d538a.css",
+    "static/css/main.c4fe5a07.css",
     "static/js/main.20c2a5a1.js"
   ]
 }
