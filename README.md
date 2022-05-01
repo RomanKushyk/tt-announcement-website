@@ -12,7 +12,6 @@ You will like it, try it!
 ## Technologies
 * React (includes FC & Context)
 * React Router
-* Classnames
 * JavaScript
 * TypeScript
 * Classnames
@@ -36,4 +35,4 @@ You will like it, try it!
 ## Troubleshooting
 
 Any advice for common problems or issues.
-For any contributing or problem-solving you could find me [Telegram](https://t.me/romankushyk) and [email](mailto:romankushyk0@gmail.com)
+For any contributing or problem-solving you could find me in [telegram](https://t.me/romankushyk) and [email](mailto:romankushyk0@gmail.com)
