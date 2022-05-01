@@ -12,8 +12,6 @@
 /build
 
 # misc
-/idea
-.idea
 .DS_Store
 .env.local
 .env.development.local
@@ -27,6 +25,7 @@ yarn-error.log*
 
 # dependencies
 /node_modules
+/.idea
 /.pnp
 .pnp.js
 
