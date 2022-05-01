@@ -1,6 +1,14 @@
 %button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 6px 10px;
   border-radius: 0.2rem;
+  transition: transform 0.3s, background-color 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 %input {

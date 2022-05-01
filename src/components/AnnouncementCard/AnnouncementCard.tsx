@@ -101,6 +101,16 @@ export const AnnouncementCard = () => {
               ))}
             </div>
           )}
+
+          <button
+            type="button"
+            className="AnnouncementCard__prev-button"
+            onClick={() => {
+              navigate('../')
+            }}
+          >
+            До списку
+          </button>
         </div>
       )}
       <Outlet/>

@@ -8,7 +8,7 @@ import "./AnnouncementForm.scss";
 
 export const AnnouncementForm = () => {
   const {
-    loadAnnouncements, selectedAnnouncementId, currentAnnouncement,
+    loadAnnouncements, selectedAnnouncementId, currentAnnouncement, setCurrentAnnouncement,
   } = useContext(AnnouncementsContext);
   const [announcementTitle, setAnnouncementTitle] = useState<string>('');
   const [announcementDescription, setAnnouncementDescription] = useState<string>('');
@@ -17,9 +17,11 @@ export const AnnouncementForm = () => {
   const navigate = useNavigate();
 
   const loadCurrentAnnouncement = useCallback( (id: number) => {
-    setAnnouncementTitle(currentAnnouncement?.title || '')
-    setAnnouncementDescription(currentAnnouncement?.body || '')
-  },[currentAnnouncement]);
+    if (selectedAnnouncementId !== 0) {
+      setAnnouncementTitle(currentAnnouncement?.title || '')
+      setAnnouncementDescription(currentAnnouncement?.body || '')
+    }
+  },[currentAnnouncement, selectedAnnouncementId]);
 
   useEffect(() => {
     loadCurrentAnnouncement(selectedAnnouncementId);
@@ -71,6 +73,7 @@ export const AnnouncementForm = () => {
       }
 
       resetForm();
+      setCurrentAnnouncement(null);
       loadAnnouncements();
     }
 

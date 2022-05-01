@@ -13,5 +13,9 @@
     background-color: #eee;
     padding: 6px 10px;
     @extend %button;
+
+    &:hover {
+      background-color: #fff;
+    }
   }
 }
